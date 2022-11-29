@@ -1,11 +1,13 @@
 package com.kh.devs_server.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Data
+
 @Entity
 @Getter
 @Setter
@@ -26,6 +28,9 @@ public class User {
 
     @Column(nullable = false)
     private String phone;
+
+    @Column(nullable = false)
+    private String profileImage;
 
     private LocalDateTime createDate;
 
