@@ -1,5 +1,6 @@
 package com.kh.devs_server.service;
 
+import com.kh.devs_server.constant.UserRole;
 import com.kh.devs_server.entity.User;
 import com.kh.devs_server.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +20,7 @@ public class UserService {
     }
 
     //회원가입
-    public boolean regUser(String userEmail, String userNickname, String password, String phone, String profileImage) {
+    public boolean regUser(String userEmail, String userNickname, String password, String phone, String profileImage, UserRole userRole) {
         // User Entity와 연결
         User user = new User();
         user.setUserEmail(userEmail);
@@ -28,6 +29,7 @@ public class UserService {
         user.setPhone(phone);
         user.setProfileImage(profileImage);
         user.setCreateDate(LocalDateTime.now());
+        user.setUserRole(UserRole.USER);
         User rst = userRepository.save(user);
         log.warn(rst.toString());
         return true;

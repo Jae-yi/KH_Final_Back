@@ -1,5 +1,6 @@
 package com.kh.devs_server.controller;
 
+import com.kh.devs_server.constant.UserRole;
 import com.kh.devs_server.entity.User;
 import com.kh.devs_server.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +30,7 @@ public class UserController {
         String getPassword = regData.get("password");
         String getPhone = regData.get("phone");
         String getProfileImage = regData.get("profileImage");
-        boolean result = userService.regUser(getUserEmail, getUserNickname, getPassword, getPhone, getProfileImage);
+        boolean result = userService.regUser(getUserEmail, getUserNickname, getPassword, getPhone, getProfileImage, UserRole.USER);
         if (result) {
             return new ResponseEntity(true, HttpStatus.OK);
         } else {
