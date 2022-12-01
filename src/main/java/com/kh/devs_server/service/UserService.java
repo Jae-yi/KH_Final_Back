@@ -20,7 +20,7 @@ public class UserService {
     }
 
     //회원가입
-    public boolean regUser(String userEmail, String userNickname, String password, String phone, String profileImage, UserRole userRole) {
+    public boolean regUser(String userEmail, String userNickname, String password, String phone, String profileImage) {
         // User Entity와 연결
         User user = new User();
         user.setUserEmail(userEmail);
@@ -42,10 +42,9 @@ public class UserService {
     }
 
     // 로그인 체크
-    public User loginCheck(String userId, String pwd) {
+    public List<User> loginCheck(String userId, String pwd) {
         List<User> memberList = userRepository.findByUserEmailAndPassword(userId, pwd);
-        User info = memberList.get(0);
 
-        return info;
+        return memberList;
     }
 }

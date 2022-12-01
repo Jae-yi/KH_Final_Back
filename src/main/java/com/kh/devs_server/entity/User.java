@@ -17,7 +17,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String userEmail;
 
     @Column(nullable = false)
@@ -29,7 +29,7 @@ public class User {
     @Column(nullable = false)
     private String phone;
 
-    @Column(nullable = false)
+    @Column(name = "profileImage")
     private String profileImage;
 
     // user-role enum type : user/admin 추가
