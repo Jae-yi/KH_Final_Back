@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Transactional // 메소드 종료시 commit or rollback
 @Service
@@ -62,4 +63,25 @@ public class UserService {
         userRepository.save(userDb);
         return user.getUserEmail();
     }
+
+    // 회원정보 찾기 - 아이디 찾기
+    public Optional<Optional<User>> getUserEmail(String phone) {
+        Optional<User> user = userRepository.findByPhone(phone);
+        return Optional.ofNullable(user);
+    }
+
+    // 회원정보 찾기 - 비밀번호 찾기
+    public User getPwd(String userEmail, String phone) {
+        List<User> user = userRepository.findByUserEmailAndPhone(userEmail, phone);
+        return user.get(0);
+    }
+
+    // 회원 탈퇴
+    @Transactional
+    public boolean userDelete(String userEmail) {
+        List<User> user = userRepository.findByUserEmail(userEmail);
+        userRepository.delete(user.get(0));
+        return true;
+    }
+
 }
