@@ -1,8 +1,11 @@
 package com.kh.devs_server.controller;
 
+
 import com.kh.devs_server.dto.MailDTO;
 import com.kh.devs_server.entity.User;
 import com.kh.devs_server.sendMail.SendMail;
+
+import com.kh.devs_server.entity.User;
 import com.kh.devs_server.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -15,7 +18,7 @@ import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-//@RequestMapping("/user")
+
 @Slf4j
 public class UserController {
     // Service 로직 연결
@@ -44,7 +47,7 @@ public class UserController {
 
     // 로그인
     @PostMapping("/login")
-    public ResponseEntity<User> userLogin(@RequestBody Map<String, String> loginData) {
+    public ResponseEntity<User> memberLogin(@RequestBody Map<String, String> loginData) {
 
         String userEmail = loginData.get("userEmail");
         String password = loginData.get("password");
