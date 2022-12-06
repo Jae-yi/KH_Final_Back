@@ -1,13 +1,9 @@
 package com.kh.devs_server.entity;
 
 import com.kh.devs_server.constant.UserRole;
-<<<<<<< HEAD
-import lombok.*;
-=======
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
->>>>>>> d42bb9ab3529c36cd5f96d4440caeff30c2defed
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -17,10 +13,6 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 public class User {
-<<<<<<< HEAD
-
-=======
->>>>>>> d42bb9ab3529c36cd5f96d4440caeff30c2defed
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
@@ -42,10 +34,6 @@ public class User {
 
     // user-role enum type : user/admin 추가
     // default는 user로 하고, admin 계정은 미리 서버에 넣어두는걸로 하기
-<<<<<<< HEAD
-
-=======
->>>>>>> d42bb9ab3529c36cd5f96d4440caeff30c2defed
     @Column(name = "userRole")
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
@@ -54,7 +42,3 @@ public class User {
 
     private LocalDateTime modifyDate;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> d42bb9ab3529c36cd5f96d4440caeff30c2defed
