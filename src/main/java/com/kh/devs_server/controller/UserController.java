@@ -5,7 +5,6 @@ import com.kh.devs_server.dto.MailDTO;
 import com.kh.devs_server.entity.User;
 import com.kh.devs_server.sendMail.SendMail;
 
-import com.kh.devs_server.entity.User;
 import com.kh.devs_server.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

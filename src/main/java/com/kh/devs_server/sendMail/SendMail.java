@@ -13,7 +13,7 @@ public class SendMail {
     public boolean sendMail(MailDTO mail) {
         String host = "smtp.gmail.com";
         final String user = "popiui0051@gmail.com";
-        final String password = "daqrdmhisxbqtkov";
+        final String password = "dvtcdxiegeqfpsps";
 
         String sender = mail.getSender();
         String pwd = mail.getContent();

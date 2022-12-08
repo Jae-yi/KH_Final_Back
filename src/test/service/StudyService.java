@@ -1,8 +1,10 @@
 package com.kh.devs_server.service;
 
 import com.kh.devs_server.dao.StudyRepository;
+import com.kh.devs_server.dao.UserRepository;
 import com.kh.devs_server.dto.StudyDTO;
 import com.kh.devs_server.entity.Study;
+import com.kh.devs_server.entity.User;
 import com.kh.devs_server.exception.NotFoundStudyException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -68,3 +70,6 @@ public class StudyService {
 //    }
 
 }
+
+
+
